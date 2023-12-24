@@ -84,15 +84,10 @@ def display_question(question_id):
 @app.route('/save_choice/<int:question_id>', methods=['POST'])
 def save_choice(question_id):
     choice = request.form.get('choice')
-
     alphabet_choice = number_to_alphabet(int(choice))
-
-
     # Save the user's choice
     # user_choices[question_id] = choice
-
     user_choices[question_id] = {'question_id': question_id, 'choice': alphabet_choice}
-
     # Write the user's choices to a user_choices.json file
     with open('user_choices.json', 'w') as json_file:
         json.dump(list(user_choices.values()), json_file, indent=2)
@@ -108,12 +103,15 @@ def save_choice(question_id):
     else:
         return 'Assignment completed! Thank you!'
     
-
-
 @app.route('/review/<int:question_id>', methods=['GET'])
 def review_page(question_id):
+    # with open('user_choices.json', 'r') as file:
+    #     user_choices_data = json.load(file)
+    # user_choice = next((c for c in user_choices_data if c['choice'] == user_choice),None)
     question = next((q for q in questions_data if q['question_id'] == question_id), None)
     return render_template('review.html', question=question)
+
+
 
     # question_id = questions_data['question_id']
     # if 0 <= question_id < len(questions_data):

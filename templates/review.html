@@ -31,15 +31,22 @@
     </style>
 
 
-<h2 class="header-class">Subject: {{ paper }}</h2>
+<h2 class="header-class">Subject: {{ question['category'] }}</h2>
 
     <div class = "container">
         
         <div class="question-block">
             <h2>Question {{ question['question_id'] }}</h2>
             <p>{{ question['Text'] }}</p>
+            <hr>
+
             <div class="review-panel">
-                <a class="answer"> Correct Answer: {{ correct_answer }}</a>
+                <a class="answer"> Correct Answer: {{question['Correct_option']}}</a>
+                <br>
+                <br>
+                <br>
+                <a class="answer"> Selected Answer: {{question['Correct_option']}}</a>
+                <br>
                 <br>
                 <br>
                 <a class="explain"> Explaination: {{ question["explaination"] }}</a>
