@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+</head>
+<body>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.questions {
+    margin-bottom: 20px;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.preview {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    margin-right: 5px;
+}
+
+a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+</style>
+
+
+
+<div class="question">
+    <p>{{ questions[] }}</p>
+    <form action="" method="post">
+        <label>{{ current_questions["Option_1_text"] }} <input type="radio" name="answer" value="A"></label><br>
+        <label>{{ current_questions["Option_2_text"] }} <input type="radio" name="answer" value="B"></label><br>
+        <label>{{ current_questions["Option_3_text"] }} <input type="radio" name="answer" value="C"></label><br>
+        <label>{{ current_questions["Option_4_text"] }} <input type="radio" name="answer" value="D"></label><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<!-- Navigation buttons -->
+<div class="navigation">
+    {% if question_index > 0 %}
+        <a href="?question_index={{ question_index - 1 }}">Previous</a>
+    {% endif %}
+
+    {% if question_index < total_questions - 1 %}
+        <a href="?question_index={{ question_index + 1 }}">Next</a>
+    {% endif %}
+</div>
+
+<!-- Display current questions -->
+<!-- <div class="questions">
+    {% for question in questions %}
+        <p>{{ question }}</p>
+    {% endfor %}
+</div> -->
+
+<!-- Pagination -->
+<!-- <div class="pagination">
+    <ul>
+        {% for page_num in page_range %}
+            <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% endfor %}
+    </ul>
+</div> -->
+
+<!-- Preview of questions -->
+<!-- <div class="preview">
+    <p>Preview:</p>
+    {% for index in preview_range %}
+        <p>{{ questions[index] }}</p>
+    {% endfor %}
+</div> -->
+
+</body>
+</html>

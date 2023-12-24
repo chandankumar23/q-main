@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+
+
+<body>
+
+    <style>
+        .container {
+            width: 100%;
+            margin-top: 20px;
+            padding-right: 0px;
+            padding-left: 0px;
+            background-color: antiquewhite;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            background-color: darkgrey;
+
+        }
+
+        .nav-link {
+            display: block;
+            margin-left: 55px;
+            color: black;
+        }
+
+        .container-fluid {
+            display: block;
+            height: 25vh;
+            align-items: left;
+            justify-content: left;
+            background-color: white;
+        }
+
+        .container-fluid .prac-list {
+            list-style: none;
+            margin-top: 150px;
+            width: 200px;
+            height: 20px;
+            border-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .prac-list li {
+            list-style: none;
+            align-items: right;
+            color: black;
+            display: block;
+
+        }
+
+        .prac-list a {
+            list-style: none;
+            align-items: right;
+            color: black;
+
+        }
+
+        .status-container-fluid {
+            display: block;
+            height: 25vh;
+            align-items: left;
+            justify-content: left;
+            background-color: white;
+        }
+
+        .status-container-fluid .status-list {
+            list-style: none;
+            margin-top: 125px;
+            width: 200px;
+            height: 20px;
+            border-bottom: 10px;
+        }
+
+        .status-list a {
+            text-decoration: none;
+        }
+
+
+        .pretest-list {
+            float: left;
+        }
+
+        .header-nav {
+            width: 100%;
+            margin-top: 30px;
+            /* background-color: black; */
+            height: 60px;
+            background-color: black;
+        }
+
+        .header-list {
+            list-style: none;
+            float: left;
+        }
+
+        .header-list li {
+            float: left;
+            padding: 30px;
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .header-list li a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+        .status-list {
+            width: 100%;
+            list-style: none;
+            float: left;
+            word-spacing: 2px;
+        }
+
+        .status-list li {
+            float: left;
+            padding: 30px;
+        }
+
+        .status-list li a {
+            color: black;
+
+        }
+
+
+        #blankSpace {
+            width: 10px;
+            height: 34px;
+        }
+
+        .username-details {
+            width: 100%;
+            height: 110px;
+            background-color: silver;
+            text-decoration: none;
+        }
+
+        .username-details .disply-name {
+            margin-left: 60px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .username-details .login-name {
+            margin-left: 60px;
+            color: blue;
+        }
+
+        .border-class {
+            border-radius: 0px;
+            border: 2px solid #73AD21;
+            padding: 10px;
+            width: 50px;
+            height: 75px;
+        }
+    </style>
+
+    <div class="header-nav">
+        <nav>
+            <ul class="header-list">
+                <li>PRETEST PLUS</a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+                <li id="blankSpace"><a href=""></a></li>
+
+
+                <li><a href="">HOME</a></li>
+                <li><a href="">EDIT ACCOUNT</a></li>
+                <li><a style="text-transform: capitalize;">Welcome {{ username }}</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="username-details">
+    </div>
+    <div class="status-container-fluid-">
+        <ul>
+            {% for paper in practice_papers %}
+            <!-- <li class="prac-list"><a href="/practice-papers/{{ paper }}/subjects">{{ paper }}</a></li> -->
+            <!-- <a href="/{{ paper }}/question/1">{{ paper }}</a> -->
+            <!-- <a href="/practice-papers/question/1">{{ paper }}</a> -->
+            <a href="/question/1">{{ paper }}</a>
+
+
+            <p> 4/4 modules answered</p>
+            <a style=" color:green" href="#">View Details</a>
+            <hr style="width:100%;text-align:left;margin-left:0">
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>

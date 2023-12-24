@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review</title>
+</head>
+<body>
+    <style>
+        .header-class{
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: lightgray;
+            
+        }
+
+             .container {
+            width: 60%;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .question-block {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: lightgray;
+        }
+
+    </style>
+
+
+<h2 class="header-class">Subject: {{ paper }}</h2>
+
+    <div class = "container">
+        
+        <div class="question-block">
+            <h2>Question {{ question['question_id'] }}</h2>
+            <p>{{ question['Text'] }}</p>
+            <div class="review-panel">
+                <a class="answer"> Correct Answer: {{ correct_answer }}</a>
+                <br>
+                <br>
+                <a class="explain"> Explaination: {{ question["explaination"] }}</a>
+                <hr>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
